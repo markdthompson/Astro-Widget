@@ -135,7 +135,7 @@
 						var date = Number(dt)/1000|0;
 					
 						// the url of the script we're calling
-						var url = "http://dev.api.farmsense.net/v1/daylengths/?d="+date+"&lat="+lat+"&lon="+lon+"&tz="+tz.replace('/','%2F')+"&callback=window.randName.f.dayLength.parseRequest";
+						var url = "http://farmsense-prod.apigee.net/v1/daylengths/?d="+date+"&lat="+lat+"&lon="+lon+"&tz="+tz.replace('/','%2F')+"&callback=window.randName.f.dayLength.parseRequest";
 						
 						//alert(url);
 						
@@ -201,7 +201,7 @@
 						var date = Number(dt)/1000|0;
 					
 						// the url of the script we're calling
-						var url = "http://dev.api.farmsense.net/v1/moonphases/?d="+date+"&callback=window.randName.f.moonPhase.parseRequest";
+						var url = "http://farmsense-prod.apigee.net/v1/moonphases/?d="+date+"&callback=window.randName.f.moonPhase.parseRequest";
 						
 						//alert(url);
 						
@@ -340,7 +340,7 @@
 				        	w.cell.setAttribute("id", "fs_remaining");
 				        	//w.txtCell = document.createTextNode( window.randName.f.dl + ': ' + window.randName.f.dd );
 				        	//w.cell.appendChild(w.txtCell);
-							w.cell.innerHTML = '<h3 style="font-size:12px;">'+window.randName.f.dl+'</h3>'+window.randName.f.dd;
+							w.cell.innerHTML = '<h3 style="font-size:12px;">'+window.randName.f.dl+'</h3><p>'+window.randName.f.dd+'</p>';
 				        	w.row.appendChild(w.cell);     
 				     
 				        }
@@ -380,7 +380,7 @@
 							// font
 							w.style.fontFamily = window.randName.f.fontFamily;
 							// border
-							w.style.border = '1px solid #000';
+							w.style.border = 'none';
 							// width
 							w.style.width = "300px";		
 							// height
@@ -404,10 +404,12 @@
 							var e = w.getElementsByTagName('td');
 							e[0].style.textAlign = "center";
 							e[0].style.fontStyle = "italic";
+							e[0].style.border = '1px solid #999';
 							
 							for(var i = 1; i< e.length; i++){
 								e[i].style.fontSize = 'small';
 								e[i].style.textAlign = 'center';
+								e[i].style.border = '1px solid #999';
 							}
 							
 							
